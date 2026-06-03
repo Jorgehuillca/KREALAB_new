@@ -1,0 +1,885 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="KreaLab — Impresión 3D bajo demanda en Lima. Convertimos tus ideas en objetos reales en 24 horas. FDM, SLA, filamento y resina." />
+  <meta name="keywords" content="impresión 3D Lima, impresión 3D Surco, KreaLab, prototipado 3D, filamento PLA ABS PETG" />
+  <meta property="og:title" content="KreaLab — Tecnología 3D bajo demanda" />
+  <meta property="og:description" content="Convertimos tus ideas en objetos reales en 24 horas. Hecho en Surco, Lima." />
+  <meta property="og:type" content="website" />
+  <title>KreaLab — Tecnología 3D bajo demanda</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700;1,900&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <script src="https://unpkg.com/@phosphor-icons/web@2.1.1/src/index.js" defer></script>
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+
+  <!-- ============================================================
+       NAVBAR
+  ============================================================ -->
+  <header class="navbar" id="navbar">
+    <div class="navbar__inner">
+      <a href="index.html" class="navbar__logo" aria-label="KreaLab inicio">
+        <span class="navbar__logo-icon" aria-hidden="true">
+          <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect x="1" y="1" width="26" height="26" rx="7" stroke="url(#logo-grad)" stroke-width="2.5"/>
+            <defs>
+              <linearGradient id="logo-grad" x1="0" y1="0" x2="28" y2="28" gradientUnits="userSpaceOnUse">
+                <stop offset="0%" stop-color="#E8502A"/>
+                <stop offset="35%" stop-color="#F5A623"/>
+                <stop offset="65%" stop-color="#4CAF50"/>
+                <stop offset="100%" stop-color="#2196F3"/>
+              </linearGradient>
+            </defs>
+          </svg>
+        </span>
+        <span class="navbar__logo-text">Krea Lab</span>
+      </a>
+
+      <nav class="navbar__nav" id="main-nav" aria-label="Navegación principal">
+        <a href="index.html" class="navbar__link navbar__link--active">
+          <span class="navbar__dot" style="--dot-color:#1a1a1a"></span>INICIO
+        </a>
+        <a href="print.html" class="navbar__link navbar__link--print">
+          <span class="navbar__dot" style="--dot-color:#E8502A"></span>PRINT
+        </a>
+        <a href="icon.html" class="navbar__link navbar__link--icon">
+          <span class="navbar__dot" style="--dot-color:#9C27B0"></span>ICON
+        </a>
+        <a href="tech.html" class="navbar__link navbar__link--tech">
+          <span class="navbar__dot" style="--dot-color:#2196F3"></span>TECH
+        </a>
+        <a href="https://edu.krealab.com.pe/" class="navbar__link navbar__link--edu" target="_blank" rel="noopener noreferrer">
+          <span class="navbar__dot" style="--dot-color:#4CAF50"></span>EDU
+        </a>
+      </nav>
+
+      <div class="navbar__actions">
+        <a href="https://wa.me/51962375279?text=Hola%2C%20quiero%20cotizar%20una%20impresión%203D"
+           class="btn btn--primary"
+           target="_blank"
+           rel="noopener noreferrer">
+          Cotizar Ahora
+        </a>
+        <button class="navbar__hamburger" id="hamburger-btn" aria-label="Abrir menú" aria-expanded="false">
+          <i class="ph ph-list"></i>
+        </button>
+      </div>
+    </div>
+
+    <div class="navbar__drawer" id="nav-drawer" aria-hidden="true">
+      <a href="index.html" class="navbar__drawer-link">INICIO</a>
+      <a href="print.html" class="navbar__drawer-link" style="color:var(--print)">PRINT · Impresión 3D</a>
+      <a href="icon.html" class="navbar__drawer-link" style="color:var(--icon)">ICON · Productos</a>
+      <a href="tech.html" class="navbar__drawer-link" style="color:var(--tech)">TECH · Soluciones</a>
+      <a href="https://edu.krealab.com.pe/" class="navbar__drawer-link" style="color:var(--edu)" target="_blank" rel="noopener noreferrer">EDU · Capacitaciones</a>
+      <a href="https://wa.me/51962375279" class="btn btn--primary btn--full" target="_blank" rel="noopener noreferrer">
+        Cotizar por WhatsApp
+      </a>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- ============================================================
+         01 · HERO — Video de impresora
+    ============================================================ -->
+    <section class="hero" id="inicio">
+      <div class="hero__content">
+        <div class="hero__badge" data-animate="fade-up" data-delay="0">
+          <span class="hero__badge-dot"></span>
+          Impresoras de filamento + resina imprimiendo ahora
+        </div>
+
+        <h1 class="hero__headline" data-animate="fade-up" data-delay="100">
+          Convertimos tus<br />
+          ideas en objetos<br />
+          <em class="hero__headline-em">reales en 24<br />horas.</em>
+        </h1>
+
+        <p class="hero__desc" data-animate="fade-up" data-delay="200">
+          Servicio de impresión 3D <strong>en filamento y resina</strong> bajo demanda en Lima.
+          Envíanos tu archivo STL y recíbelo impreso en menos de una semana — o en 24h si tu pedido es urgente.
+          Imprimimos piezas grandes hasta <strong>330 × 185 × 400 mm</strong>.
+        </p>
+
+        <div class="hero__ctas" data-animate="fade-up" data-delay="300">
+          <a href="https://wa.me/51962375279?text=Hola%2C%20quiero%20cotizar%20una%20impresión%203D"
+             class="btn btn--primary btn--lg" target="_blank" rel="noopener noreferrer">
+            Cotizar mi impresión →
+          </a>
+          <a href="#portafolio" class="btn btn--outline btn--lg">Ver portafolio</a>
+        </div>
+
+        <div class="hero__trust" data-animate="fade-up" data-delay="400">
+          <span><i class="ph ph-device-mobile"></i> Sin compromiso</span>
+          <span><i class="ph ph-lightning"></i> Respuesta en 30 min</span>
+          <span><i class="ph ph-credit-card"></i> Yape, BCP, contra entrega</span>
+        </div>
+      </div>
+
+      <!-- VIDEO en lugar de mockup estático -->
+      <div class="hero__visual" data-animate="fade-left" data-delay="150">
+        <div class="hero__video-wrap">
+          <video
+            class="hero__video"
+            src="assets/video_impresora.mp4"
+            autoplay
+            muted
+            loop
+            playsinline
+            aria-label="Impresora 3D KreaLab en funcionamiento">
+          </video>
+          <!-- Badge flotante superior -->
+          <div class="hero__card-badge hero__card-badge--top">
+            <span class="badge__label">TALLER EN ACCIÓN</span>
+            <strong class="badge__title">Imprimiendo ahora</strong>
+            <span class="badge__sub">
+              <span class="badge__dot badge__dot--green"></span>En línea
+            </span>
+          </div>
+          <!-- Badge flotante inferior -->
+          <div class="hero__card-badge hero__card-badge--bottom">
+            <span class="badge__label">COLA DEL DÍA</span>
+            <strong class="badge__title"><span class="badge__num">14 piezas</span> en cola</strong>
+            <span class="badge__sub">
+              <span class="badge__dot badge__dot--green"></span>9 en producción · 5 en revisión
+            </span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         02 · LÍNEAS DE NEGOCIO
+    ============================================================ -->
+    <section class="lineas" id="lineas">
+      <div class="container">
+        <div class="section-header" data-animate="fade-up">
+          <h2 class="section-title">
+            Todo lo que necesitas para llevar<br />una idea al mundo físico.
+          </h2>
+          <p class="section-desc">
+            Desde una pieza única hasta capacitar a tu equipo. Krea Lab opera cuatro líneas integradas
+            para que no tengas que armar el rompecabezas tú mismo.
+          </p>
+        </div>
+
+        <div class="lineas__grid">
+
+          <!-- PRINT — ahora incluye "resina" -->
+          <article class="linea-card linea-card--print" data-animate="fade-up" data-delay="0">
+            <div class="linea-card__header">
+              <span class="linea-card__num">01 · PRINT</span>
+            </div>
+            <h3 class="linea-card__title" style="color:var(--print)">PRINT</h3>
+            <p class="linea-card__desc">
+              Recibe tus piezas en 24h, 2–3 días o 3–5 días según urgencia.
+              PLA, ABS, PETG, FLEX, ASA y resina disponibles.
+            </p>
+            <div class="linea-card__footer">
+              <div class="linea-card__icon-wrap" style="background:rgba(232,80,42,0.1)">
+                <i class="ph ph-printer" style="color:var(--print)"></i>
+              </div>
+              <a href="print.html" class="linea-card__cta">Conocer más →</a>
+            </div>
+            <div class="linea-card__blob" style="background:rgba(232,80,42,0.08)"></div>
+          </article>
+
+          <!-- TECH -->
+          <article class="linea-card linea-card--tech" data-animate="fade-up" data-delay="80">
+            <div class="linea-card__header">
+              <span class="linea-card__num">02 · TECH</span>
+            </div>
+            <h3 class="linea-card__title" style="color:var(--tech)">TECH</h3>
+            <p class="linea-card__desc">
+              Prototipado de proyectos, consultoría e integraciones para empresas
+              que quieren materializar ideas complejas.
+            </p>
+            <div class="linea-card__footer">
+              <div class="linea-card__icon-wrap" style="background:rgba(33,150,243,0.1)">
+                <i class="ph ph-desktop-tower" style="color:var(--tech)"></i>
+              </div>
+              <a href="tech.html" class="linea-card__cta">Conocer más →</a>
+            </div>
+            <div class="linea-card__blob" style="background:rgba(33,150,243,0.08)"></div>
+          </article>
+
+          <!-- EDU -->
+          <article class="linea-card linea-card--edu" data-animate="fade-up" data-delay="160">
+            <div class="linea-card__header">
+              <span class="linea-card__num">03 · EDU</span>
+            </div>
+            <h3 class="linea-card__title" style="color:var(--edu)">EDU</h3>
+            <p class="linea-card__desc">
+              Aprende impresión 3D desde cero o lleva tu negocio al siguiente nivel
+              con nuestros cursos y talleres presenciales y online.
+            </p>
+            <div class="linea-card__footer">
+              <div class="linea-card__icon-wrap" style="background:rgba(76,175,80,0.1)">
+                <i class="ph ph-graduation-cap" style="color:var(--edu)"></i>
+              </div>
+              <a href="https://edu.krealab.com.pe/" class="linea-card__cta" target="_blank" rel="noopener noreferrer">Conocer más →</a>
+            </div>
+            <div class="linea-card__blob" style="background:rgba(76,175,80,0.08)"></div>
+          </article>
+
+          <!-- ICON -->
+          <article class="linea-card linea-card--icon" data-animate="fade-up" data-delay="240">
+            <div class="linea-card__header">
+              <span class="linea-card__num">04 · ICON</span>
+            </div>
+            <h3 class="linea-card__title" style="color:var(--icon)">ICON</h3>
+            <p class="linea-card__desc">
+              Catálogo de diseños propios listos para imprimir: coleccionables,
+              organizadores y accesorios premium con acabado impecable.
+            </p>
+            <div class="linea-card__footer">
+              <div class="linea-card__icon-wrap" style="background:rgba(156,39,176,0.1)">
+                <i class="ph ph-star" style="color:var(--icon)"></i>
+              </div>
+              <a href="icon.html" class="linea-card__cta">Conocer más →</a>
+            </div>
+            <div class="linea-card__blob" style="background:rgba(156,39,176,0.08)"></div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         03 · ESTADÍSTICAS
+    ============================================================ -->
+    <section class="stats" id="stats">
+      <div class="container">
+        <div class="stats__grid">
+          <div class="stats__item" data-animate="fade-up" data-delay="0">
+            <span class="stats__num" data-target="2400">0</span><span class="stats__sym">+</span>
+            <p class="stats__label">PIEZAS IMPRESAS</p>
+          </div>
+          <div class="stats__item" data-animate="fade-up" data-delay="80">
+            <span class="stats__num" data-target="180">0</span><span class="stats__sym">+</span>
+            <p class="stats__label">CLIENTES FELICES</p>
+          </div>
+          <div class="stats__item" data-animate="fade-up" data-delay="160">
+            <span class="stats__num" data-target="24" data-suffix="h">0</span>
+            <p class="stats__label">PLAZO EXPRESS</p>
+          </div>
+          <div class="stats__item" data-animate="fade-up" data-delay="240">
+            <span class="stats__num" data-target="98">0</span><span class="stats__sym stats__sym--accent">%</span>
+            <p class="stats__label">PEDIDOS A TIEMPO</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         04 · PORTAFOLIO — Grid asimétrico y completo, sin huecos
+    ============================================================ -->
+    <section class="portafolio" id="portafolio">
+      <div class="container">
+        <div class="section-header" data-animate="fade-up">
+          <h2 class="section-title">Trabajos reales,<br />entregados a tiempo.</h2>
+          <p class="section-desc">
+            Una muestra de piezas que salieron de nuestras impresoras este trimestre.
+            Hover para ver material y tiempo de impresión.
+          </p>
+        </div>
+
+        <!-- Filtros -->
+        <div class="portafolio__filters" data-animate="fade-up" data-delay="100">
+          <button class="filter-btn filter-btn--active" data-filter="all">Todos</button>
+          <button class="filter-btn" data-filter="figuras">Figuras <span>3</span></button>
+          <button class="filter-btn" data-filter="prototipos">Prototipos <span>3</span></button>
+          <button class="filter-btn" data-filter="repuestos">Repuestos <span>3</span></button>
+          <button class="filter-btn" data-filter="decorativos">Decorativos <span>4</span></button>
+          <button class="filter-btn" data-filter="industrial">Industrial <span>3</span></button>
+        </div>
+
+        <!-- Grid masonry asimétrico — 4 columnas, sin huecos -->
+        <div class="portafolio__grid" id="portafolio-grid">
+          <!-- Col A -->
+          <div class="port-item port-item--tall" data-category="figuras" data-animate="fade-up" data-delay="0">
+            <div class="port-item__img port-item__img--salmon"></div>
+            <div class="port-item__overlay">
+              <span class="port-item__cat">FIGURAS</span>
+              <strong>Figura decorativa v3</strong>
+              <span>PLA · 6h 15m</span>
+            </div>
+          </div>
+          <div class="port-item" data-category="repuestos" data-animate="fade-up" data-delay="0">
+            <div class="port-item__img port-item__img--grey"></div>
+            <div class="port-item__overlay">
+              <span class="port-item__cat">REPUESTOS</span>
+              <strong>Engranaje transmisión</strong>
+              <span>PETG · 3h 20m</span>
+            </div>
+          </div>
+          <div class="port-item" data-category="decorativos" data-animate="fade-up" data-delay="0">
+            <div class="port-item__img port-item__img--purple-light"></div>
+            <div class="port-item__overlay">
+              <span class="port-item__cat">DECORATIVOS</span>
+              <strong>Lámpara Wave</strong>
+              <span>PLA · 9h 30m</span>
+            </div>
+          </div>
+
+          <!-- Col B -->
+          <div class="port-item" data-category="industrial" data-animate="fade-up" data-delay="60">
+            <div class="port-item__img port-item__img--green"></div>
+            <div class="port-item__overlay">
+              <span class="port-item__cat">INDUSTRIAL</span>
+              <strong>Soporte tubería 1/2"</strong>
+              <span>ASA · 4h 30m</span>
+            </div>
+          </div>
+          <div class="port-item port-item--tall" data-category="figuras" data-animate="fade-up" data-delay="60">
+            <div class="port-item__img port-item__img--salmon-light"></div>
+            <div class="port-item__overlay">
+              <span class="port-item__cat">FIGURAS</span>
+              <strong>Maceta hexagonal Hexa</strong>
+              <span>PLA · 7h 45m</span>
+            </div>
+          </div>
+          <div class="port-item" data-category="industrial" data-animate="fade-up" data-delay="60">
+            <div class="port-item__img port-item__img--green-mid"></div>
+            <div class="port-item__overlay">
+              <span class="port-item__cat">INDUSTRIAL</span>
+              <strong>Rack servidor</strong>
+              <span>PETG · 8h 10m</span>
+            </div>
+          </div>
+
+          <!-- Col C -->
+          <div class="port-item" data-category="prototipos" data-animate="fade-up" data-delay="120">
+            <div class="port-item__img port-item__img--blue"></div>
+            <div class="port-item__overlay">
+              <span class="port-item__cat">PROTOTIPOS</span>
+              <strong>Carcasa IoT sensor</strong>
+              <span>ABS · 5h 00m</span>
+            </div>
+          </div>
+          <div class="port-item" data-category="decorativos" data-animate="fade-up" data-delay="120">
+            <div class="port-item__img port-item__img--orange"></div>
+            <div class="port-item__overlay">
+              <span class="port-item__cat">DECORATIVOS</span>
+              <strong>Organizador modular</strong>
+              <span>PLA · 5h 50m</span>
+            </div>
+          </div>
+          <div class="port-item port-item--tall" data-category="repuestos" data-animate="fade-up" data-delay="120">
+            <div class="port-item__img port-item__img--teal"></div>
+            <div class="port-item__overlay">
+              <span class="port-item__cat">REPUESTOS</span>
+              <strong>Polea correa GT2</strong>
+              <span>PETG · 2h 15m</span>
+            </div>
+          </div>
+
+          <!-- Col D -->
+          <div class="port-item" data-category="decorativos" data-animate="fade-up" data-delay="180">
+            <div class="port-item__img port-item__img--blue-grey"></div>
+            <div class="port-item__overlay">
+              <span class="port-item__cat">DECORATIVOS</span>
+              <strong>Florero paramétrico</strong>
+              <span>PLA · 10h 00m</span>
+            </div>
+          </div>
+          <div class="port-item port-item--tall" data-category="prototipos" data-animate="fade-up" data-delay="180">
+            <div class="port-item__img port-item__img--blue"></div>
+            <div class="port-item__overlay">
+              <span class="port-item__cat">PROTOTIPOS</span>
+              <strong>Consola HMI</strong>
+              <span>ABS · 11h 20m</span>
+            </div>
+          </div>
+          <div class="port-item" data-category="figuras" data-animate="fade-up" data-delay="180">
+            <div class="port-item__img port-item__img--salmon"></div>
+            <div class="port-item__overlay">
+              <span class="port-item__cat">FIGURAS</span>
+              <strong>Busto decorativo</strong>
+              <span>Resina · 4h 00m</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="portafolio__footer" data-animate="fade-up">
+          <a href="https://wa.me/51962375279" class="btn btn--dark btn--lg" target="_blank" rel="noopener noreferrer">
+            Ver portafolio completo →
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         05 · PROCESO — Guía de cómo obtener el producto
+    ============================================================ -->
+    <section class="proceso" id="proceso">
+      <div class="container">
+        <div class="section-header" data-animate="fade-up">
+          <span class="section-kicker">03 · CÓMO FUNCIONA</span>
+          <h2 class="section-title">Cuatro pasos simples.<br />Tu pieza en tus manos.</h2>
+          <p class="section-desc">
+            Todo el proceso pensado para que sea rápido, claro y sin complicaciones.
+          </p>
+        </div>
+
+        <div class="proceso__grid">
+          <div class="proceso-step" data-animate="fade-up" data-delay="0">
+            <div class="proceso-step__icon">
+              <i class="ph ph-upload-simple"></i>
+            </div>
+            <span class="proceso-step__num">Paso 01</span>
+            <h3 class="proceso-step__title">Comparte tu idea</h3>
+            <p class="proceso-step__desc">
+              Envíanos tu archivo STL, OBJ o 3MF por WhatsApp. Si aún no tienes el modelo, cuéntanos tu idea y te ayudamos a darle forma.
+            </p>
+          </div>
+          <div class="proceso-step" data-animate="fade-up" data-delay="80">
+            <div class="proceso-step__icon">
+              <i class="ph ph-chat-circle-dots"></i>
+            </div>
+            <span class="proceso-step__num">Paso 02</span>
+            <h3 class="proceso-step__title">Recibe tu propuesta</h3>
+            <p class="proceso-step__desc">
+              Te enviamos los detalles: material, acabado, tiempo estimado y precio final. Sin costos ocultos ni sorpresas.
+            </p>
+          </div>
+          <div class="proceso-step" data-animate="fade-up" data-delay="160">
+            <div class="proceso-step__icon">
+              <i class="ph ph-printer"></i>
+            </div>
+            <span class="proceso-step__num">Paso 03</span>
+            <h3 class="proceso-step__title">Lo imprimimos</h3>
+            <p class="proceso-step__desc">
+              Producción inmediata en filamento o resina. Te enviamos una foto de la pieza terminada antes de despacharla.
+            </p>
+          </div>
+          <div class="proceso-step" data-animate="fade-up" data-delay="240">
+            <div class="proceso-step__icon">
+              <i class="ph ph-package"></i>
+            </div>
+            <span class="proceso-step__num">Paso 04</span>
+            <h3 class="proceso-step__title">Lo recibes</h3>
+            <p class="proceso-step__desc">
+              Delivery en Lima o envío a cualquier provincia del Perú. Empaquetado seguro para que llegue en perfectas condiciones.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         06 · MATERIALES — Con fotos reales, sin precios
+    ============================================================ -->
+    <section class="materiales" id="materiales">
+      <div class="container">
+        <div class="section-header" data-animate="fade-up">
+          <h2 class="section-title">Filamento, resina<br />y volumen XL.</h2>
+          <p class="section-desc">
+            Imprimimos en filamento (PLA, ABS, PETG, FLEX, ASA) y en resina para detalle ultra fino.
+            Y nuestra ventaja: una máquina con volumen de <strong>330 × 185 × 400 mm</strong>, ideal para
+            piezas grandes que en otras impresoras tendrías que partir.
+          </p>
+        </div>
+
+        <div class="materiales__scroll">
+
+          <div class="mat-card" data-animate="fade-up" data-delay="0">
+            <div class="mat-card__img mat-card__img--photo">
+              <img src="assets/img/pla_filamento.jpg" alt="Filamento PLA para impresión 3D" loading="lazy" />
+              <span class="mat-card__badge">PLA</span>
+            </div>
+            <div class="mat-card__body">
+              <h3 class="mat-card__name">PLA</h3>
+              <p class="mat-card__desc">Ideal para figuras, decorativo y prototipos rápidos.</p>
+              <div class="mat-card__tags">
+                <span class="tag">Fácil de imprimir</span>
+                <span class="tag">Gran detalle</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="mat-card" data-animate="fade-up" data-delay="80">
+            <div class="mat-card__img mat-card__img--photo">
+              <img src="assets/img/abs_filamento.jpg" alt="Filamento ABS para impresión 3D" loading="lazy" />
+              <span class="mat-card__badge">ABS</span>
+            </div>
+            <div class="mat-card__body">
+              <h3 class="mat-card__name">ABS</h3>
+              <p class="mat-card__desc">Resistente a impactos y temperatura. Para uso técnico.</p>
+              <div class="mat-card__tags">
+                <span class="tag">Resistente</span>
+                <span class="tag">Mecanizable</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="mat-card" data-animate="fade-up" data-delay="160">
+            <div class="mat-card__img mat-card__img--photo">
+              <img src="assets/img/petg_filamento.jpg" alt="Filamento PETG para impresión 3D" loading="lazy" />
+              <span class="mat-card__badge">PETG</span>
+            </div>
+            <div class="mat-card__body">
+              <h3 class="mat-card__name">PETG</h3>
+              <p class="mat-card__desc">Equilibrio entre fuerza, flexibilidad y acabado limpio.</p>
+              <div class="mat-card__tags">
+                <span class="tag">Resistente</span>
+                <span class="tag">Apto contacto</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="mat-card" data-animate="fade-up" data-delay="240">
+            <div class="mat-card__img mat-card__img--photo">
+              <img src="assets/img/flex_filamento.jpg" alt="Filamento FLEX para impresión 3D" loading="lazy" />
+              <span class="mat-card__badge">FLEX</span>
+            </div>
+            <div class="mat-card__body">
+              <h3 class="mat-card__name">FLEX</h3>
+              <p class="mat-card__desc">Goma flexible. Ideal para fundas, juntas y empaques.</p>
+              <div class="mat-card__tags">
+                <span class="tag">Flexible</span>
+                <span class="tag">TPU</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="mat-card" data-animate="fade-up" data-delay="320">
+            <div class="mat-card__img mat-card__img--photo">
+              <img src="assets/img/asa_filamento.jpg" alt="Filamento ASA para impresión 3D" loading="lazy" />
+              <span class="mat-card__badge">ASA</span>
+            </div>
+            <div class="mat-card__body">
+              <h3 class="mat-card__name">ASA</h3>
+              <p class="mat-card__desc">Resistente a UV y clima. Para piezas que van afuera.</p>
+              <div class="mat-card__tags">
+                <span class="tag">Exterior</span>
+                <span class="tag">Anti-UV</span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         07 · TESTIMONIOS — Con fotos reales de personas
+    ============================================================ -->
+    <section class="testimonios" id="testimonios">
+      <div class="container">
+        <div class="section-header" data-animate="fade-up">
+          <span class="section-kicker">05 · LO QUE DICEN</span>
+          <h2 class="section-title">Personas que ya<br />imprimieron con nosotros.</h2>
+        </div>
+
+        <div class="testimonios__grid">
+          <article class="testimonial-card" data-animate="fade-up" data-delay="0">
+            <blockquote class="testimonial-card__quote">
+              "Mi pieza llegó al día siguiente, mejor terminada que el render. Volvería a pedir sin pensarlo."
+            </blockquote>
+            <footer class="testimonial-card__footer">
+              <img src="assets/img/daniela.jpg" alt="Daniela Romero" class="testimonial-card__photo" />
+              <div>
+                <strong>Daniela Romero</strong>
+                <span>Diseñadora industrial</span>
+              </div>
+            </footer>
+          </article>
+
+          <article class="testimonial-card" data-animate="fade-up" data-delay="100">
+            <blockquote class="testimonial-card__quote">
+              "Imprimieron 80 piezas para nuestro stand en 4 días. Precio cerrado, cero dolores de cabeza."
+            </blockquote>
+            <footer class="testimonial-card__footer">
+              <img src="assets/img/jorge.jpg" alt="Jorge Mendoza" class="testimonial-card__photo" />
+              <div>
+                <strong>Jorge Mendoza</strong>
+                <span>Fundador · Startup hardware</span>
+              </div>
+            </footer>
+          </article>
+
+          <article class="testimonial-card" data-animate="fade-up" data-delay="200">
+            <blockquote class="testimonial-card__quote">
+              "Tomé el curso de EDU sin saber nada. Ahora imprimo desde mi casa y vendo por Instagram."
+            </blockquote>
+            <footer class="testimonial-card__footer">
+              <img src="assets/img/maria.jpg" alt="María Salinas" class="testimonial-card__photo" />
+              <div>
+                <strong>María Salinas</strong>
+                <span>Estudiante UPC</span>
+              </div>
+            </footer>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         08 · SOCIAL FEED — Enlazado con Instagram real
+    ============================================================ -->
+    <section class="social" id="social">
+      <div class="container">
+        <div class="social__header" data-animate="fade-up">
+          <div>
+            <h2 class="section-title">Cada pieza que sale del<br />taller, en tu feed.</h2>
+            <p class="section-desc">
+              Detrás de cámaras, time-lapses y entregas. Etiquétanos cuando recibas tu pieza — repostamos los mejores.
+            </p>
+          </div>
+          <div class="social__accounts">
+            <a href="https://www.instagram.com/_krealab/" target="_blank" rel="noopener noreferrer" class="social__account">
+              <i class="ph ph-instagram-logo"></i>@_krealab · 8.4k
+            </a>
+            <a href="https://www.tiktok.com/@krealab" target="_blank" rel="noopener noreferrer" class="social__account">
+              <i class="ph ph-tiktok-logo"></i>@krealab · 12.1k
+            </a>
+            <a href="https://www.facebook.com/krealab" target="_blank" rel="noopener noreferrer" class="social__account">
+              <i class="ph ph-facebook-logo"></i>/krealab · 3.2k
+            </a>
+          </div>
+        </div>
+
+        <div class="social__grid" data-animate="fade-up" data-delay="100">
+          <a href="https://www.instagram.com/_krealab/" target="_blank" rel="noopener noreferrer" class="social-post" style="--social-bg:var(--blue-soft)">
+            <div class="social-post__top">
+              <i class="ph ph-instagram-logo"></i>
+              <span>👁 4.2k</span>
+            </div>
+            <p class="social-post__caption">Engranaje PETG · pedido entregado en 36h</p>
+            <div class="social-post__meta">♡ 312 &nbsp; 💬 18</div>
+          </a>
+          <a href="https://www.instagram.com/_krealab/" target="_blank" rel="noopener noreferrer" class="social-post" style="--social-bg:var(--teal)">
+            <div class="social-post__top">
+              <i class="ph ph-instagram-logo"></i>
+              <span>👁 8.7k</span>
+            </div>
+            <p class="social-post__caption">Time-lapse · maceta hexagonal en PLA verde</p>
+            <div class="social-post__meta">♡ 612 &nbsp; 💬 44</div>
+          </a>
+          <a href="https://www.instagram.com/_krealab/" target="_blank" rel="noopener noreferrer" class="social-post" style="--social-bg:var(--grey-mat)">
+            <div class="social-post__top">
+              <i class="ph ph-instagram-logo"></i>
+              <span>👁 2.1k</span>
+            </div>
+            <p class="social-post__caption">Detrás de cámaras · calibración Bambu A1</p>
+            <div class="social-post__meta">♡ 198 &nbsp; 💬 12</div>
+          </a>
+          <a href="https://www.instagram.com/_krealab/" target="_blank" rel="noopener noreferrer" class="social-post" style="--social-bg:var(--salmon)">
+            <div class="social-post__top">
+              <i class="ph ph-instagram-logo"></i>
+              <span>👁 5.5k</span>
+            </div>
+            <p class="social-post__caption">Cliente del mes · 80 piezas para stand</p>
+            <div class="social-post__meta">♡ 421 &nbsp; 💬 29</div>
+          </a>
+        </div>
+
+        <div class="social__footer" data-animate="fade-up">
+          <a href="https://www.instagram.com/_krealab/" class="btn btn--outline" target="_blank" rel="noopener noreferrer">
+            Ver todo el feed en Instagram →
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         09 · FAQ
+    ============================================================ -->
+    <section class="faq" id="faq">
+      <div class="container container--narrow">
+        <div class="section-header section-header--center" data-animate="fade-up">
+          <span class="section-kicker">07 · PREGUNTAS FRECUENTES</span>
+          <h2 class="section-title">Lo que más nos preguntan.</h2>
+        </div>
+
+        <div class="faq__list" data-animate="fade-up" data-delay="100">
+          <details class="faq-item" open>
+            <summary class="faq-item__question">
+              ¿Qué archivos aceptan?
+              <span class="faq-item__icon"><i class="ph ph-x"></i></span>
+            </summary>
+            <div class="faq-item__answer">
+              Trabajamos con STL, OBJ y 3MF. Si tienes el modelo en otro formato (STEP, IGES) o solo una idea,
+              podemos convertirlo o modelarlo desde cero. También aceptamos referencias en imagen y dimensiones a mano.
+            </div>
+          </details>
+          <details class="faq-item">
+            <summary class="faq-item__question">
+              ¿Cuánto tarda mi pedido?
+              <span class="faq-item__icon"><i class="ph ph-plus"></i></span>
+            </summary>
+            <div class="faq-item__answer">
+              Tenemos tres modalidades: Express (24h), Diurno (2–3 días) y Nocturno (3–5 días).
+              El plazo depende del tamaño, material y cantidad de piezas.
+              Siempre recibirás una confirmación de tiempo antes de iniciar la impresión.
+            </div>
+          </details>
+          <details class="faq-item">
+            <summary class="faq-item__question">
+              ¿Hacen envíos a provincia?
+              <span class="faq-item__icon"><i class="ph ph-plus"></i></span>
+            </summary>
+            <div class="faq-item__answer">
+              Sí. Enviamos a toda provincia vía Olva Courier o Shalom. El costo depende del peso y destino.
+              Coordinamos el empaquetado seguro para que la pieza llegue en perfectas condiciones.
+            </div>
+          </details>
+          <details class="faq-item">
+            <summary class="faq-item__question">
+              ¿Tienen mínimo de pedido?
+              <span class="faq-item__icon"><i class="ph ph-plus"></i></span>
+            </summary>
+            <div class="faq-item__answer">
+              No hay mínimo. Imprimimos desde una sola pieza. Para pedidos corporativos o en serie,
+              contáctanos para negociar precios por volumen.
+            </div>
+          </details>
+          <details class="faq-item">
+            <summary class="faq-item__question">
+              ¿Qué métodos de pago aceptan?
+              <span class="faq-item__icon"><i class="ph ph-plus"></i></span>
+            </summary>
+            <div class="faq-item__answer">
+              Aceptamos Yape, BCP, Interbank, y pago contra entrega en Lima. Para pedidos corporativos
+              también emitimos factura electrónica.
+            </div>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         10 · CONTACTO / CTA FINAL
+    ============================================================ -->
+    <section class="contacto" id="contacto">
+      <div class="container">
+        <div class="contacto__inner">
+          <div class="contacto__heading" data-animate="fade-up">
+            <span class="section-kicker contacto__kicker">08 · HABLEMOS</span>
+            <h2 class="contacto__title">
+              ¿Listo para<br /><em>imprimir?</em>
+            </h2>
+            <p class="contacto__desc">
+              Estamos en Lima. Te respondemos en menos de 30 minutos en horario de oficina.
+              WhatsApp es el camino más rápido.
+            </p>
+          </div>
+
+          <div class="contacto__cards">
+            <div class="contacto-card contacto-card--primary" data-animate="fade-up" data-delay="0">
+              <span class="contacto-card__label">WHATSAPP · MÁS RÁPIDO</span>
+              <strong class="contacto-card__value">+51 962 375 279</strong>
+              <span class="contacto-card__hours">Lun–Sáb · 9:00 a 19:00</span>
+              <a href="https://wa.me/51962375279?text=Hola%2C%20quiero%20cotizar%20una%20impresión%203D"
+                 class="btn btn--dark" target="_blank" rel="noopener noreferrer">
+                Abrir chat →
+              </a>
+            </div>
+            <div class="contacto-card" data-animate="fade-up" data-delay="100">
+              <span class="contacto-card__label">EMAIL</span>
+              <strong class="contacto-card__value contacto-card__value--sm">contacto@<br />krealab.com</strong>
+              <span class="contacto-card__hours">Cotizaciones por correo · respuesta en 4h hábiles</span>
+            </div>
+            <div class="contacto-card" data-animate="fade-up" data-delay="200">
+              <span class="contacto-card__label">VISÍTANOS</span>
+              <strong class="contacto-card__value">Krea Lab</strong>
+              <span class="contacto-card__hours">Lima, Perú</span>
+              <div class="contacto-card__map" aria-label="Ubicación KreaLab">
+                <span class="contacto-card__map-dot"></span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ============================================================
+       FOOTER — Corregido: Pixelhost, sin "hecho con cariño", dirección vacía
+  ============================================================ -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__grid">
+
+        <div class="footer__brand">
+          <a href="index.html" class="navbar__logo footer__logo" aria-label="KreaLab">
+            <span class="navbar__logo-icon" aria-hidden="true">
+              <svg width="22" height="22" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <rect x="1" y="1" width="26" height="26" rx="7" stroke="url(#logo-grad-f)" stroke-width="2.5"/>
+                <defs>
+                  <linearGradient id="logo-grad-f" x1="0" y1="0" x2="28" y2="28" gradientUnits="userSpaceOnUse">
+                    <stop offset="0%" stop-color="#E8502A"/>
+                    <stop offset="35%" stop-color="#F5A623"/>
+                    <stop offset="65%" stop-color="#4CAF50"/>
+                    <stop offset="100%" stop-color="#2196F3"/>
+                  </linearGradient>
+                </defs>
+              </svg>
+            </span>
+            <span class="navbar__logo-text">Krea Lab</span>
+          </a>
+          <p class="footer__tagline">Tecnología 3D bajo demanda.<br />Lima, Perú.</p>
+          <div class="footer__social">
+            <a href="https://www.instagram.com/_krealab/" aria-label="Instagram KreaLab" target="_blank" rel="noopener noreferrer"><i class="ph ph-instagram-logo"></i></a>
+            <a href="https://www.facebook.com/krealab" aria-label="Facebook KreaLab" target="_blank" rel="noopener noreferrer"><i class="ph ph-facebook-logo"></i></a>
+            <a href="https://www.tiktok.com/@krealab" aria-label="TikTok KreaLab" target="_blank" rel="noopener noreferrer"><i class="ph ph-tiktok-logo"></i></a>
+          </div>
+        </div>
+
+        <div class="footer__col">
+          <h4 class="footer__col-title">LÍNEAS</h4>
+          <ul class="footer__links">
+            <li><a href="print.html">Print · Impresión 3D</a></li>
+            <li><a href="tech.html">Tech · Soluciones</a></li>
+            <li><a href="https://edu.krealab.com.pe/" target="_blank" rel="noopener noreferrer">Edu · Capacitaciones</a></li>
+            <li><a href="icon.html">Icon · Productos</a></li>
+          </ul>
+        </div>
+
+        <div class="footer__col">
+          <h4 class="footer__col-title">EMPRESA</h4>
+          <ul class="footer__links">
+            <li><a href="#lineas">Sobre nosotros</a></li>
+            <li><a href="#faq">Preguntas frecuentes</a></li>
+            <li><a href="#contacto">Contacto</a></li>
+            <li><a href="#">Libro de Reclamaciones</a></li>
+          </ul>
+        </div>
+
+        <div class="footer__col">
+          <h4 class="footer__col-title">CONTACTO</h4>
+          <ul class="footer__contact">
+            <li><a href="tel:+51962375279">+51 962 375 279</a></li>
+            <li><a href="mailto:contacto@krealab.com">contacto@krealab.com</a></li>
+          </ul>
+        </div>
+
+      </div>
+
+      <div class="footer__bottom">
+        <span>© 2026 Krea Lab · Todos los derechos reservados</span>
+        <span>Diseño web por <a href="#" style="color:var(--text-muted); text-decoration:underline;">Pixelhost</a></span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- WhatsApp float -->
+  <a href="https://wa.me/51962375279?text=Hola%2C%20quiero%20cotizar%20una%20impresión%203D"
+     class="wa-float"
+     target="_blank"
+     rel="noopener noreferrer"
+     aria-label="Contactar por WhatsApp">
+    <i class="ph ph-whatsapp-logo"></i>
+  </a>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
