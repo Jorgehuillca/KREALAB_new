@@ -12,7 +12,7 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700;1,900&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700;1,900&family=DM+Sans:wght@300;400;500;600&family=Space+Grotesk:wght@600;700&display=swap" rel="stylesheet" />
   <script src="https://unpkg.com/@phosphor-icons/web@2.1.1/src/index.js" defer></script>
   <link rel="stylesheet" href="css/styles.css" />
 </head>
@@ -258,19 +258,27 @@
       <div class="container">
         <div class="stats__grid">
           <div class="stats__item" data-animate="fade-up" data-delay="0">
-            <span class="stats__num" data-target="2400">0</span><span class="stats__sym">+</span>
+            <div class="stats__item__row">
+              <span class="stats__num" data-target="2400">0</span><span class="stats__sym">+</span>
+            </div>
             <p class="stats__label">PIEZAS IMPRESAS</p>
           </div>
           <div class="stats__item" data-animate="fade-up" data-delay="80">
-            <span class="stats__num" data-target="180">0</span><span class="stats__sym">+</span>
+            <div class="stats__item__row">
+              <span class="stats__num" data-target="180">0</span><span class="stats__sym">+</span>
+            </div>
             <p class="stats__label">CLIENTES FELICES</p>
           </div>
           <div class="stats__item" data-animate="fade-up" data-delay="160">
-            <span class="stats__num" data-target="24" data-suffix="h">0</span>
+            <div class="stats__item__row">
+              <span class="stats__num" data-target="24" data-suffix="h">0</span>
+            </div>
             <p class="stats__label">PLAZO EXPRESS</p>
           </div>
           <div class="stats__item" data-animate="fade-up" data-delay="240">
-            <span class="stats__num" data-target="98">0</span><span class="stats__sym stats__sym--accent">%</span>
+            <div class="stats__item__row">
+              <span class="stats__num" data-target="98">0</span><span class="stats__sym stats__sym--accent">%</span>
+            </div>
             <p class="stats__label">PEDIDOS A TIEMPO</p>
           </div>
         </div>
@@ -492,7 +500,6 @@
           <div class="mat-card" data-animate="fade-up" data-delay="0">
             <div class="mat-card__img mat-card__img--photo">
               <img src="assets/img/pla_filamento.jpg" alt="Filamento PLA para impresión 3D" loading="lazy" />
-              <span class="mat-card__badge">PLA</span>
             </div>
             <div class="mat-card__body">
               <h3 class="mat-card__name">PLA</h3>
@@ -507,7 +514,6 @@
           <div class="mat-card" data-animate="fade-up" data-delay="80">
             <div class="mat-card__img mat-card__img--photo">
               <img src="assets/img/abs_filamento.jpg" alt="Filamento ABS para impresión 3D" loading="lazy" />
-              <span class="mat-card__badge">ABS</span>
             </div>
             <div class="mat-card__body">
               <h3 class="mat-card__name">ABS</h3>
@@ -522,7 +528,6 @@
           <div class="mat-card" data-animate="fade-up" data-delay="160">
             <div class="mat-card__img mat-card__img--photo">
               <img src="assets/img/petg_filamento.jpg" alt="Filamento PETG para impresión 3D" loading="lazy" />
-              <span class="mat-card__badge">PETG</span>
             </div>
             <div class="mat-card__body">
               <h3 class="mat-card__name">PETG</h3>
@@ -537,7 +542,6 @@
           <div class="mat-card" data-animate="fade-up" data-delay="240">
             <div class="mat-card__img mat-card__img--photo">
               <img src="assets/img/flex_filamento.jpg" alt="Filamento FLEX para impresión 3D" loading="lazy" />
-              <span class="mat-card__badge">FLEX</span>
             </div>
             <div class="mat-card__body">
               <h3 class="mat-card__name">FLEX</h3>
@@ -552,7 +556,6 @@
           <div class="mat-card" data-animate="fade-up" data-delay="320">
             <div class="mat-card__img mat-card__img--photo">
               <img src="assets/img/asa_filamento.jpg" alt="Filamento ASA para impresión 3D" loading="lazy" />
-              <span class="mat-card__badge">ASA</span>
             </div>
             <div class="mat-card__body">
               <h3 class="mat-card__name">ASA</h3>
