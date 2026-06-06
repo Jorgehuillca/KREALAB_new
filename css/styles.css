@@ -704,8 +704,8 @@ details summary::-webkit-details-marker { display: none; }
   display: flex;
   align-items: baseline;
   gap: 2px;
+  line-height: 1;
 }
-
 
 .stats__item .stats__num,
 .stats__item .stats__sym {
@@ -1941,4 +1941,30 @@ a.social-post {
   .portafolio__grid {
     columns: 2;
   }
+}
+
+/* ============================================================
+   31. ICON PRODUCT CARD TAG (catálogo y producto)
+   ============================================================ */
+.icon-product-card__tag {
+  display: inline-block;
+  font-size: 0.62rem;
+  font-weight: 600;
+  letter-spacing: 0.10em;
+  text-transform: uppercase;
+  padding: 4px 10px;
+  border-radius: var(--radius-pill);
+  background: rgba(255,255,255,0.82);
+  color: var(--text-primary);
+  backdrop-filter: blur(4px);
+}
+
+/* icon-product-card como enlace */
+a.icon-product-card {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+}
+a.icon-product-card:hover .icon-product-card__name {
+  color: var(--icon);
 }

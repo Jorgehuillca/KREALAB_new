@@ -11,21 +11,17 @@
   <script src="https://unpkg.com/@phosphor-icons/web@2.1.1/src/index.js" defer></script>
   <link rel="stylesheet" href="css/styles.css" />
   <style>
-    /* ICON color overrides */
     :root { --accent: var(--icon); }
     .btn--primary { background: var(--icon); box-shadow: 0 4px 16px rgba(156,39,176,0.30); }
     .btn--primary:hover { background: #7b1fa2; box-shadow: 0 6px 24px rgba(156,39,176,0.40); }
     .hero__badge-dot { background: var(--icon); animation: none; }
     .hero__headline-em { color: var(--icon); }
-    .hero__card-mockup--icon { background: linear-gradient(145deg, #E0C8F0 0%, #C4A8E0 50%, #A080C0 100%); }
-    .hero__card-shape { background: rgba(156,39,176,0.75); box-shadow: 0 20px 60px rgba(156,39,176,0.30); }
-    .contacto__title em { color: var(--icon); }
     .icon-product-card__price-label { color: var(--icon); }
+    .contacto__title em { color: var(--icon); }
   </style>
 </head>
 <body>
 
-  <!-- NAVBAR -->
   <header class="navbar" id="navbar">
     <div class="navbar__inner">
       <a href="index.html" class="navbar__logo" aria-label="KreaLab inicio">
@@ -64,24 +60,23 @@
 
   <main>
 
-    <!-- HERO ICON -->
+    <!-- HERO -->
     <section class="hero" id="inicio">
       <div class="hero__content">
         <div class="hero__badge" data-animate="fade-up" data-delay="0">
-          <span class="hero__badge-dot" style="animation:none; background:var(--icon)"></span>
+          <span class="hero__badge-dot"></span>
           Catálogo exclusivo y piezas de diseño coleccionables
         </div>
         <h1 class="hero__headline" data-animate="fade-up" data-delay="100">
           Diseños de autor<br />listos para
-          <em class="hero__headline-em"><br />decorar tu espacio<br />de trabajo.</em>
+          <em class="hero__headline-em"><br />decorar tu espacio.</em>
         </h1>
         <p class="hero__desc" data-animate="fade-up" data-delay="200">
-          Línea de productos listos para despacho inmediato. Diseños modulares, coleccionables Premium 
-          y accesorios de escritorio fabricados con un acabado impecable.
+          Coleccionables premium, accesorios de escritorio y piezas decorativas fabricadas con acabado impecable. Listos para despacho inmediato o bajo pedido en 48h.
         </p>
         <div class="hero__ctas" data-animate="fade-up" data-delay="300">
-          <a href="#catalogo" class="btn btn--primary btn--lg">Explorar Catálogo en Stock</a>
-          <a href="https://wa.me/51962375279?text=Hola%2C%20quiero%20encargar%20una%20pieza%20custom%20ICON" class="btn btn--outline btn--lg" target="_blank" rel="noopener noreferrer">Encargar Pieza Custom</a>
+          <a href="icon-catalogo.html" class="btn btn--primary btn--lg">Ver catálogo completo</a>
+          <a href="https://wa.me/51962375279?text=Hola%2C%20quiero%20encargar%20una%20pieza%20custom%20ICON" class="btn btn--outline btn--lg" target="_blank" rel="noopener noreferrer">Encargar pieza custom</a>
         </div>
         <div class="hero__trust" data-animate="fade-up" data-delay="400">
           <span><i class="ph ph-package"></i> Despacho inmediato</span>
@@ -92,8 +87,8 @@
       <div class="hero__visual" data-animate="fade-left" data-delay="150">
         <div class="hero__card hero__card--main">
           <div class="hero__card-label"><span>Línea Icon</span></div>
-          <div class="hero__card-mockup hero__card-mockup--icon">
-            <div class="hero__card-shape"></div>
+          <div class="hero__card-mockup" style="background:linear-gradient(145deg,#E0C8F0,#C4A8E0,#A080C0); aspect-ratio:4/5; display:flex; align-items:center; justify-content:center;">
+            <div style="width:55%; aspect-ratio:1; border-radius:var(--radius-xl); background:rgba(156,39,176,0.75); box-shadow:0 20px 60px rgba(156,39,176,0.30); transform:rotate(-3deg);"></div>
           </div>
           <div class="hero__card-badge hero__card-badge--top">
             <span class="badge__label">EDICIONES LIMITADAS</span>
@@ -102,29 +97,30 @@
           </div>
           <div class="hero__card-badge hero__card-badge--bottom">
             <span class="badge__label">KREA LAB ORIGINAL</span>
-            <strong class="badge__title">Cajas de embalaje premium</strong>
+            <strong class="badge__title">Embalaje premium incluido</strong>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- CATÁLOGO ICON -->
+    <!-- DESTACADOS — 8 productos en home -->
     <section class="materiales" id="catalogo" style="background:var(--bg-surface)">
       <div class="container">
         <div class="section-header" data-animate="fade-up">
-          <span class="section-kicker">CATÁLOGO SELECCIONADO</span>
-          <h2 class="section-title">Productos originales disponibles<br />con entrega inmediata.</h2>
+          <span class="section-kicker">DESTACADOS</span>
+          <h2 class="section-title">Productos más pedidos<br />esta temporada.</h2>
+          <p class="section-desc">Una selección de los diseños que más eligen nuestros clientes. Cada pieza fabricada en resina de alta calidad con acabado metálico.</p>
         </div>
 
         <div class="icon-products-grid">
 
-          <article class="icon-product-card" data-animate="fade-up" data-delay="0">
-            <div class="icon-product-card__img" style="background:linear-gradient(145deg,#E0C8F0,#C4A8E0)">
-              <span class="mat-card__badge">Coleccionables</span>
+          <article class="icon-product-card" data-animate="fade-up" data-delay="0" data-product="mc-pato">
+            <div class="icon-product-card__img" style="background:linear-gradient(145deg,#F5D88A,#D4A840)">
+              <span class="icon-product-card__tag">Coleccionable</span>
             </div>
             <div class="icon-product-card__body">
-              <h3 class="icon-product-card__name">Figura Scrooge McDuck v2</h3>
-              <p class="icon-product-card__desc">Coleccionable de alta densidad con acabados finos y caja especial de la marca "Krea Lab".</p>
+              <h3 class="icon-product-card__name">Mc Pato</h3>
+              <p class="icon-product-card__desc">Figura coleccionable de alta densidad con acabado metálico dorado.</p>
               <div class="icon-product-card__footer">
                 <span class="icon-product-card__price-label">Stock Limitado</span>
                 <strong class="icon-product-card__price">S/ 85.00</strong>
@@ -132,99 +128,99 @@
             </div>
           </article>
 
-          <article class="icon-product-card" data-animate="fade-up" data-delay="80">
-            <div class="icon-product-card__img" style="background:linear-gradient(145deg,#C8D8F0,#A8B8E0)">
-              <span class="mat-card__badge">Organizadores</span>
+          <article class="icon-product-card" data-animate="fade-up" data-delay="60" data-product="tio-rico-mc">
+            <div class="icon-product-card__img" style="background:linear-gradient(145deg,#D0D8E8,#9AA8C0)">
+              <span class="icon-product-card__tag">Coleccionable</span>
             </div>
             <div class="icon-product-card__body">
-              <h3 class="icon-product-card__name">Maceta Geométrica Hexa</h3>
-              <p class="icon-product-card__desc">Minimalista y moderna, optimizada para suculentas de interiores con drenaje interno.</p>
+              <h3 class="icon-product-card__name">Tío Rico Mc</h3>
+              <p class="icon-product-card__desc">Acabado metálico clásico. Símbolo de prosperidad y mentalidad de éxito.</p>
               <div class="icon-product-card__footer">
-                <span class="icon-product-card__price-label">Stock: 12 unidades</span>
-                <strong class="icon-product-card__price">S/ 35.00</strong>
+                <span class="icon-product-card__price-label">Stock Limitado</span>
+                <strong class="icon-product-card__price">S/ 65.00</strong>
               </div>
             </div>
           </article>
 
-          <article class="icon-product-card" data-animate="fade-up" data-delay="160">
+          <article class="icon-product-card" data-animate="fade-up" data-delay="120" data-product="mickey-mouse">
+            <div class="icon-product-card__img" style="background:linear-gradient(145deg,#E8C8B0,#C09878)">
+              <span class="icon-product-card__tag">Disney</span>
+            </div>
+            <div class="icon-product-card__body">
+              <h3 class="icon-product-card__name">Mickey Mouse</h3>
+              <p class="icon-product-card__desc">Figura clásica de Mickey en acabado bronce satinado premium.</p>
+              <div class="icon-product-card__footer">
+                <span class="icon-product-card__price-label">En stock</span>
+                <strong class="icon-product-card__price">S/ 65.00</strong>
+              </div>
+            </div>
+          </article>
+
+          <article class="icon-product-card" data-animate="fade-up" data-delay="180" data-product="stitch">
+            <div class="icon-product-card__img" style="background:linear-gradient(145deg,#A8C8F0,#7098C8)">
+              <span class="icon-product-card__tag">Disney</span>
+            </div>
+            <div class="icon-product-card__body">
+              <h3 class="icon-product-card__name">Stitch</h3>
+              <p class="icon-product-card__desc">El favorito de muchos, en acabado dorado artesanal de alta fidelidad.</p>
+              <div class="icon-product-card__footer">
+                <span class="icon-product-card__price-label">En stock</span>
+                <strong class="icon-product-card__price">S/ 65.00</strong>
+              </div>
+            </div>
+          </article>
+
+          <article class="icon-product-card" data-animate="fade-up" data-delay="0" data-product="minnie-mouse">
+            <div class="icon-product-card__img" style="background:linear-gradient(145deg,#F0C8D8,#D898A8)">
+              <span class="icon-product-card__tag">Disney</span>
+            </div>
+            <div class="icon-product-card__body">
+              <h3 class="icon-product-card__name">Minnie Mouse</h3>
+              <p class="icon-product-card__desc">Figura de Minnie en acabado dorado rosado, perfecta para escritorios.</p>
+              <div class="icon-product-card__footer">
+                <span class="icon-product-card__price-label">En stock</span>
+                <strong class="icon-product-card__price">S/ 65.00</strong>
+              </div>
+            </div>
+          </article>
+
+          <article class="icon-product-card" data-animate="fade-up" data-delay="60" data-product="goofy">
+            <div class="icon-product-card__img" style="background:linear-gradient(145deg,#C8E0D0,#88B898)">
+              <span class="icon-product-card__tag">Disney</span>
+            </div>
+            <div class="icon-product-card__body">
+              <h3 class="icon-product-card__name">Goofy Clásico</h3>
+              <p class="icon-product-card__desc">Goofy en pose característica, acabado metálico satinado de lujo.</p>
+              <div class="icon-product-card__footer">
+                <span class="icon-product-card__price-label">En stock</span>
+                <strong class="icon-product-card__price">S/ 55.00</strong>
+              </div>
+            </div>
+          </article>
+
+          <article class="icon-product-card" data-animate="fade-up" data-delay="120" data-product="soporte-laptop">
             <div class="icon-product-card__img" style="background:linear-gradient(145deg,#D0C8F0,#B0A8E0)">
-              <span class="mat-card__badge">Soportes</span>
+              <span class="icon-product-card__tag">Accesorio</span>
             </div>
             <div class="icon-product-card__body">
               <h3 class="icon-product-card__name">Soporte Elevador Laptop</h3>
-              <p class="icon-product-card__desc">Estructura ergonómica rígida en filamento compuesto, previene el calentamiento del equipo.</p>
+              <p class="icon-product-card__desc">Estructura ergonómica en filamento compuesto. Previene el calentamiento.</p>
               <div class="icon-product-card__footer">
-                <span class="icon-product-card__price-label">Stock: 4 unidades</span>
+                <span class="icon-product-card__price-label">En stock</span>
                 <strong class="icon-product-card__price">S/ 49.00</strong>
               </div>
             </div>
           </article>
 
-          <article class="icon-product-card" data-animate="fade-up" data-delay="240">
-            <div class="icon-product-card__img" style="background:linear-gradient(145deg,#E8D0F0,#C8B0E0)">
-              <span class="mat-card__badge">Lámparas</span>
-            </div>
-            <div class="icon-product-card__body">
-              <h3 class="icon-product-card__name">Pantalla de Lámpara Wave</h3>
-              <p class="icon-product-card__desc">Diseño paramétrico complejo que difumina la luz LED de manera uniforme y relajante.</p>
-              <div class="icon-product-card__footer">
-                <span class="icon-product-card__price-label">Bajo Pedido (48h)</span>
-                <strong class="icon-product-card__price">S/ 75.00</strong>
-              </div>
-            </div>
-          </article>
-
-          <article class="icon-product-card" data-animate="fade-up" data-delay="0">
-            <div class="icon-product-card__img" style="background:linear-gradient(145deg,#D8C0F0,#B898E0)">
-              <span class="mat-card__badge">Escritorio</span>
-            </div>
-            <div class="icon-product-card__body">
-              <h3 class="icon-product-card__name">Organizador Modular Desk v1</h3>
-              <p class="icon-product-card__desc">Sistema modular de organizadores apilables para escritorio. Disponible en múltiples colores.</p>
-              <div class="icon-product-card__footer">
-                <span class="icon-product-card__price-label">Stock: 8 unidades</span>
-                <strong class="icon-product-card__price">S/ 42.00</strong>
-              </div>
-            </div>
-          </article>
-
-          <article class="icon-product-card" data-animate="fade-up" data-delay="80">
-            <div class="icon-product-card__img" style="background:linear-gradient(145deg,#F0D0E8,#E0A8C8)">
-              <span class="mat-card__badge">Coleccionables</span>
-            </div>
-            <div class="icon-product-card__body">
-              <h3 class="icon-product-card__name">Busto Arquitectónico Griego</h3>
-              <p class="icon-product-card__desc">Réplica de alta fidelidad impresa en resina con acabado mármol pintado a mano.</p>
-              <div class="icon-product-card__footer">
-                <span class="icon-product-card__price-label">Stock Limitado</span>
-                <strong class="icon-product-card__price">S/ 110.00</strong>
-              </div>
-            </div>
-          </article>
-
-          <article class="icon-product-card" data-animate="fade-up" data-delay="160">
-            <div class="icon-product-card__img" style="background:linear-gradient(145deg,#C8D0F8,#A0A8E8)">
-              <span class="mat-card__badge">Accesorios</span>
-            </div>
-            <div class="icon-product-card__body">
-              <h3 class="icon-product-card__name">Soporte Vertical Doble Monitor</h3>
-              <p class="icon-product-card__desc">Fabricado en PETG reforzado para soportar monitores de hasta 27". Ajuste en ángulo.</p>
-              <div class="icon-product-card__footer">
-                <span class="icon-product-card__price-label">Bajo Pedido (72h)</span>
-                <strong class="icon-product-card__price">S/ 98.00</strong>
-              </div>
-            </div>
-          </article>
-
-          <article class="icon-product-card" data-animate="fade-up" data-delay="240">
+          <article class="icon-product-card" data-animate="fade-up" data-delay="180" data-product="florero-twisted">
             <div class="icon-product-card__img" style="background:linear-gradient(145deg,#E8C8F0,#C8A0E0)">
-              <span class="mat-card__badge">Decorativos</span>
+              <span class="icon-product-card__tag">Decorativo</span>
             </div>
             <div class="icon-product-card__body">
               <h3 class="icon-product-card__name">Florero Paramétrico Twisted</h3>
-              <p class="icon-product-card__desc">Impreso en espiral continuo (vase mode) sin capas visibles. Translúcido con luz interior.</p>
+              <p class="icon-product-card__desc">Impreso en espiral continuo sin capas visibles. Translúcido con luz interior.</p>
               <div class="icon-product-card__footer">
-                <span class="icon-product-card__price-label">Stock: 6 unidades</span>
+                <span class="icon-product-card__price-label">En stock</span>
                 <strong class="icon-product-card__price">S/ 58.00</strong>
               </div>
             </div>
@@ -233,14 +229,14 @@
         </div>
 
         <div class="portafolio__footer" data-animate="fade-up">
-          <a href="https://wa.me/51962375279?text=Hola%2C%20quiero%20ver%20el%20catálogo%20completo%20ICON" class="btn btn--dark btn--lg" target="_blank" rel="noopener noreferrer">
-            Ver todos los productos en la Tienda →
+          <a href="icon-catalogo.html" class="btn btn--dark btn--lg">
+            Ver catálogo completo →
           </a>
         </div>
       </div>
     </section>
 
-    <!-- PROCESO ICON -->
+    <!-- PROCESO -->
     <section class="proceso" id="proceso">
       <div class="container">
         <div class="section-header" data-animate="fade-up">
@@ -252,43 +248,38 @@
             <div class="proceso-step__icon" style="background:rgba(156,39,176,0.1)"><i class="ph ph-magnifying-glass" style="color:var(--icon)"></i></div>
             <span class="proceso-step__num">Paso 01</span>
             <h3 class="proceso-step__title">Elige tu producto</h3>
-            <p class="proceso-step__desc">Navega el catálogo, elige color y acabado. Si tienes dudas, escríbenos y te asesoramos.</p>
+            <p class="proceso-step__desc">Navega el catálogo, elige color y acabado. Si tienes dudas escríbenos.</p>
           </div>
           <div class="proceso-step" data-animate="fade-up" data-delay="80">
             <div class="proceso-step__icon" style="background:rgba(156,39,176,0.1)"><i class="ph ph-currency-circle-dollar" style="color:var(--icon)"></i></div>
             <span class="proceso-step__num">Paso 02</span>
             <h3 class="proceso-step__title">Confirma y paga</h3>
-            <p class="proceso-step__desc">Yape, BCP, Interbank o contra entrega en Lima. Emitimos boleta o factura electrónica.</p>
+            <p class="proceso-step__desc">Yape, BCP, Interbank o contra entrega en Lima.</p>
           </div>
           <div class="proceso-step" data-animate="fade-up" data-delay="160">
             <div class="proceso-step__icon" style="background:rgba(156,39,176,0.1)"><i class="ph ph-gift" style="color:var(--icon)"></i></div>
             <span class="proceso-step__num">Paso 03</span>
             <h3 class="proceso-step__title">Empaquetado premium</h3>
-            <p class="proceso-step__desc">Cada pieza va en caja Krea Lab con protección. Te enviamos foto antes de despachar.</p>
+            <p class="proceso-step__desc">Caja Krea Lab con protección. Foto antes de despachar.</p>
           </div>
           <div class="proceso-step" data-animate="fade-up" data-delay="240">
             <div class="proceso-step__icon" style="background:rgba(156,39,176,0.1)"><i class="ph ph-truck" style="color:var(--icon)"></i></div>
             <span class="proceso-step__num">Paso 04</span>
             <h3 class="proceso-step__title">Recibe en casa</h3>
-            <p class="proceso-step__desc">Delivery en Lima o envío a provincias. Seguimiento en tiempo real por WhatsApp.</p>
+            <p class="proceso-step__desc">Delivery en Lima o envío a provincias vía Olva o Shalom.</p>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- CONTACTO ICON -->
+    <!-- CONTACTO -->
     <section class="contacto" id="contacto">
       <div class="container">
         <div class="contacto__inner">
           <div class="contacto__heading" data-animate="fade-up">
             <span class="section-kicker contacto__kicker">¿QUIERES UNA PIEZA ÚNICA?</span>
-            <h2 class="contacto__title">
-              Diseños propios,<br /><em style="color:var(--icon)">listos para ti.</em>
-            </h2>
-            <p class="contacto__desc">
-              ¿No encuentras lo que buscas en el catálogo? Cuéntanos tu idea y la fabricamos 
-              bajo pedido con acabado premium en 48 horas.
-            </p>
+            <h2 class="contacto__title">Diseños propios,<br /><em>listos para ti.</em></h2>
+            <p class="contacto__desc">¿No encuentras lo que buscas? Cuéntanos tu idea y la fabricamos bajo pedido con acabado premium en 48 horas.</p>
           </div>
           <div class="contacto__cards">
             <div class="contacto-card" style="background:var(--icon); border-color:transparent;" data-animate="fade-up" data-delay="0">
@@ -304,11 +295,8 @@
             </div>
             <div class="contacto-card" data-animate="fade-up" data-delay="200">
               <span class="contacto-card__label">ENCUÉNTRANOS</span>
-              <strong class="contacto-card__value">Blu Building</strong>
-              <span class="contacto-card__hours">Calle El Boulevard 145<br />Santiago de Surco, Lima</span>
-              <div class="contacto-card__map">
-                <span class="contacto-card__map-dot" style="background:var(--icon); box-shadow:0 0 0 4px rgba(156,39,176,0.25), 0 0 0 8px rgba(156,39,176,0.10)"></span>
-              </div>
+              <strong class="contacto-card__value">Krea Lab</strong>
+              <span class="contacto-card__hours">Lima, Perú</span>
             </div>
           </div>
         </div>
@@ -317,7 +305,6 @@
 
   </main>
 
-  <!-- FOOTER -->
   <footer class="footer">
     <div class="container">
       <div class="footer__grid">
@@ -346,7 +333,7 @@
           <h4 class="footer__col-title">EMPRESA</h4>
           <ul class="footer__links">
             <li><a href="index.html#lineas">Sobre nosotros</a></li>
-            <li><a href="index.html#faq">FAQ</a></li>
+            <li><a href="index.html#faq">Preguntas frecuentes</a></li>
             <li><a href="index.html#contacto">Contacto</a></li>
             <li><a href="#">Libro de Reclamaciones</a></li>
           </ul>
@@ -356,7 +343,6 @@
           <ul class="footer__contact">
             <li><a href="tel:+51962375279">+51 962 375 279</a></li>
             <li><a href="mailto:contacto@krealab.com">contacto@krealab.com</a></li>
-            
           </ul>
         </div>
       </div>

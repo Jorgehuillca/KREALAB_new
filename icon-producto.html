@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>KreaLab ICON — Producto</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700;1,900&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <script src="https://unpkg.com/@phosphor-icons/web@2.1.1/src/index.js" defer></script>
+  <link rel="stylesheet" href="css/styles.css" />
+  <style>
+    :root { --accent: var(--icon); }
+    .btn--primary { background: var(--icon); box-shadow: 0 4px 16px rgba(156,39,176,0.30); }
+    .btn--primary:hover { background: #7b1fa2; }
+
+    /* Layout del producto */
+    .producto-wrap {
+      padding-top: calc(var(--nav-height) + var(--space-3xl));
+      padding-bottom: var(--space-4xl);
+    }
+
+    .producto-back {
+      display: inline-flex;
+      align-items: center;
+      gap: var(--space-sm);
+      font-size: 0.82rem;
+      color: var(--text-muted);
+      margin-bottom: var(--space-2xl);
+      transition: color var(--transition-fast);
+    }
+    .producto-back:hover { color: var(--text-primary); }
+
+    .producto-layout {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: var(--space-3xl);
+      align-items: start;
+    }
+
+    /* Visual */
+    .producto-visual {
+      border-radius: var(--radius-xl);
+      overflow: hidden;
+      aspect-ratio: 1;
+      position: sticky;
+      top: calc(var(--nav-height) + var(--space-xl));
+    }
+
+    .producto-img-main {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .producto-img-main .producto-placeholder {
+      width: 45%;
+      aspect-ratio: 1;
+      border-radius: var(--radius-xl);
+      opacity: 0.7;
+      box-shadow: 0 30px 80px rgba(0,0,0,0.20);
+    }
+
+    /* Info */
+
+    .producto-tag {
+      display: inline-block;
+      font-size: 0.65rem;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      padding: 4px 12px;
+      border-radius: var(--radius-pill);
+      background: rgba(156,39,176,0.10);
+      color: var(--icon);
+      margin-bottom: var(--space-lg);
+    }
+
+    .producto-nombre {
+      font-family: 'DM Sans', sans-serif;
+      font-size: clamp(1.8rem, 3.5vw, 2.8rem);
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      line-height: 1.1;
+      color: var(--text-primary);
+      margin-bottom: var(--space-md);
+    }
+
+    .producto-precio {
+      font-family: 'Space Grotesk', 'DM Sans', sans-serif;
+      font-size: 1.8rem;
+      font-weight: 700;
+      color: var(--text-primary);
+      margin-bottom: var(--space-xl);
+    }
+
+    .producto-stock {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 0.78rem;
+      color: var(--text-secondary);
+      margin-bottom: var(--space-xl);
+    }
+
+    .producto-stock-dot {
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: var(--edu);
+    }
+    .producto-stock-dot--low { background: #F5A623; }
+    .producto-stock-dot--order { background: var(--tech); }
+
+    .producto-desc {
+      font-size: 0.95rem;
+      color: var(--text-secondary);
+      line-height: 1.7;
+      margin-bottom: var(--space-xl);
+      padding-bottom: var(--space-xl);
+      border-bottom: 1px solid var(--border-light);
+    }
+
+    /* Características */
+    .producto-features {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: var(--space-md);
+      margin-bottom: var(--space-xl);
+      padding-bottom: var(--space-xl);
+      border-bottom: 1px solid var(--border-light);
+    }
+
+    .producto-feature {
+      display: flex;
+      align-items: flex-start;
+      gap: var(--space-sm);
+    }
+
+    .producto-feature i {
+      font-size: 1rem;
+      color: var(--icon);
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+
+    .producto-feature__text {
+      font-size: 0.82rem;
+      color: var(--text-secondary);
+      line-height: 1.4;
+    }
+
+    .producto-feature__text strong {
+      display: block;
+      font-weight: 600;
+      color: var(--text-primary);
+      margin-bottom: 2px;
+    }
+
+    /* CTA */
+    .producto-cta {
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-md);
+    }
+
+    .producto-cta .btn {
+      justify-content: center;
+      font-size: 1rem;
+      padding: 16px 24px;
+    }
+
+    .producto-cta-note {
+      font-size: 0.75rem;
+      color: var(--text-muted);
+      text-align: center;
+    }
+
+    /* Relacionados */
+    .producto-relacionados {
+      padding-block: var(--space-3xl);
+      border-top: 1px solid var(--border-light);
+    }
+
+    /* Not found */
+    .producto-notfound {
+      text-align: center;
+      padding: var(--space-4xl);
+      color: var(--text-secondary);
+    }
+
+    @media (max-width: 1024px) {
+      .producto-layout {
+        grid-template-columns: 1fr;
+      }
+      .producto-visual {
+        position: static;
+        aspect-ratio: 4/3;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header class="navbar" id="navbar">
+    <div class="navbar__inner">
+      <a href="index.html" class="navbar__logo" aria-label="KreaLab inicio">
+        <span class="navbar__logo-icon">
+          <svg width="28" height="28" viewBox="0 0 28 28" fill="none">
+            <rect x="1" y="1" width="26" height="26" rx="7" stroke="url(#lg-ip)" stroke-width="2.5"/>
+            <defs><linearGradient id="lg-ip" x1="0" y1="0" x2="28" y2="28" gradientUnits="userSpaceOnUse">
+              <stop offset="0%" stop-color="#E8502A"/><stop offset="35%" stop-color="#F5A623"/>
+              <stop offset="65%" stop-color="#4CAF50"/><stop offset="100%" stop-color="#2196F3"/>
+            </linearGradient></defs>
+          </svg>
+        </span>
+        <span class="navbar__logo-text">Krea Lab</span>
+      </a>
+      <nav class="navbar__nav">
+        <a href="index.html" class="navbar__link"><span class="navbar__dot" style="--dot-color:#1a1a1a"></span>INICIO</a>
+        <a href="print.html" class="navbar__link navbar__link--print"><span class="navbar__dot" style="--dot-color:#E8502A"></span>PRINT</a>
+        <a href="icon.html" class="navbar__link navbar__link--active navbar__link--icon"><span class="navbar__dot" style="--dot-color:#9C27B0"></span>ICON</a>
+        <a href="tech.html" class="navbar__link navbar__link--tech"><span class="navbar__dot" style="--dot-color:#2196F3"></span>TECH</a>
+        <a href="https://edu.krealab.com.pe/" class="navbar__link navbar__link--edu" target="_blank" rel="noopener noreferrer"><span class="navbar__dot" style="--dot-color:#4CAF50"></span>EDU</a>
+      </nav>
+      <div class="navbar__actions">
+        <a href="https://wa.me/51962375279" class="btn btn--primary" target="_blank" rel="noopener noreferrer">Cotizar Ahora</a>
+        <button class="navbar__hamburger" id="hamburger-btn" aria-label="Abrir menú" aria-expanded="false"><i class="ph ph-list"></i></button>
+      </div>
+    </div>
+    <div class="navbar__drawer" id="nav-drawer" aria-hidden="true">
+      <a href="index.html" class="navbar__drawer-link">INICIO</a>
+      <a href="print.html" class="navbar__drawer-link" style="color:var(--print)">PRINT · Impresión 3D</a>
+      <a href="icon.html" class="navbar__drawer-link" style="color:var(--icon)">ICON · Productos</a>
+      <a href="tech.html" class="navbar__drawer-link" style="color:var(--tech)">TECH · Soluciones</a>
+      <a href="https://edu.krealab.com.pe/" class="navbar__drawer-link" style="color:var(--edu)" target="_blank" rel="noopener noreferrer">EDU · Capacitaciones</a>
+      <a href="https://wa.me/51962375279" class="btn btn--primary btn--full" target="_blank" rel="noopener noreferrer">Comprar por WhatsApp</a>
+    </div>
+  </header>
+
+  <main>
+    <div class="producto-wrap container" id="producto-contenido">
+      <!-- Renderizado por JS -->
+      <div class="producto-notfound">
+        <i class="ph ph-spinner" style="font-size:2rem; display:block; margin-bottom:var(--space-md)"></i>
+        Cargando producto...
+      </div>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__grid">
+        <div class="footer__brand">
+          <a href="index.html" class="navbar__logo footer__logo">
+            <span class="navbar__logo-icon"><svg width="22" height="22" viewBox="0 0 28 28" fill="none"><rect x="1" y="1" width="26" height="26" rx="7" stroke="url(#lg-ipf)" stroke-width="2.5"/><defs><linearGradient id="lg-ipf" x1="0" y1="0" x2="28" y2="28" gradientUnits="userSpaceOnUse"><stop offset="0%" stop-color="#E8502A"/><stop offset="100%" stop-color="#9C27B0"/></linearGradient></defs></svg></span>
+            <span class="navbar__logo-text">Krea Lab</span>
+          </a>
+          <p class="footer__tagline">Tecnología 3D bajo demanda.<br />Lima, Perú.</p>
+          <div class="footer__social">
+            <a href="https://www.instagram.com/_krealab/" aria-label="Instagram" target="_blank" rel="noopener noreferrer"><i class="ph ph-instagram-logo"></i></a>
+            <a href="https://www.facebook.com/krealab" aria-label="Facebook" target="_blank" rel="noopener noreferrer"><i class="ph ph-facebook-logo"></i></a>
+            <a href="https://www.tiktok.com/@krealab" aria-label="TikTok" target="_blank" rel="noopener noreferrer"><i class="ph ph-tiktok-logo"></i></a>
+          </div>
+        </div>
+        <div class="footer__col">
+          <h4 class="footer__col-title">LÍNEAS</h4>
+          <ul class="footer__links">
+            <li><a href="print.html">Print · Impresión 3D</a></li>
+            <li><a href="tech.html">Tech · Soluciones</a></li>
+            <li><a href="https://edu.krealab.com.pe/" target="_blank" rel="noopener noreferrer">Edu · Capacitaciones</a></li>
+            <li><a href="icon.html">Icon · Productos</a></li>
+          </ul>
+        </div>
+        <div class="footer__col">
+          <h4 class="footer__col-title">EMPRESA</h4>
+          <ul class="footer__links">
+            <li><a href="index.html#lineas">Sobre nosotros</a></li>
+            <li><a href="index.html#faq">Preguntas frecuentes</a></li>
+            <li><a href="index.html#contacto">Contacto</a></li>
+            <li><a href="#">Libro de Reclamaciones</a></li>
+          </ul>
+        </div>
+        <div class="footer__col">
+          <h4 class="footer__col-title">CONTACTO</h4>
+          <ul class="footer__contact">
+            <li><a href="tel:+51962375279">+51 962 375 279</a></li>
+            <li><a href="mailto:contacto@krealab.com">contacto@krealab.com</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <span>© 2026 Krea Lab · Todos los derechos reservados</span>
+        <span>Diseño web por <a href="#" style="color:var(--text-muted); text-decoration:underline;">Pixelhost</a></span>
+      </div>
+    </div>
+  </footer>
+
+  <a href="https://wa.me/51962375279" class="wa-float" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp">
+    <i class="ph ph-whatsapp-logo"></i>
+  </a>
+
+  <script src="js/products.js"></script>
+  <script src="js/main.js"></script>
+  <script>
+    // Leer ?id= de la URL
+    const params = new URLSearchParams(window.location.search);
+    const productId = params.get('id');
+    const contenido = document.getElementById('producto-contenido');
+
+    const product = PRODUCTS.find(p => p.id === productId);
+
+    if (!product) {
+      contenido.innerHTML = `
+        <div class="producto-notfound">
+          <i class="ph ph-warning" style="font-size:2.5rem; display:block; margin-bottom:var(--space-md); color:var(--text-muted)"></i>
+          <h2 style="font-size:1.2rem; margin-bottom:var(--space-md)">Producto no encontrado</h2>
+          <a href="icon-catalogo.html" class="btn btn--primary">Ver catálogo completo</a>
+        </div>
+      `;
+    } else {
+      // Actualizar título de la página
+      document.title = `${product.name} — KreaLab ICON`;
+
+      // Productos relacionados (misma tag, excluyendo el actual)
+      const relacionados = PRODUCTS
+        .filter(p => p.id !== product.id && p.tags.some(t => product.tags.includes(t)))
+        .slice(0, 4);
+
+      const stockDotClass = product.stockLabel === 'En stock'
+        ? 'producto-stock-dot'
+        : product.stockLabel.includes('Pedido')
+          ? 'producto-stock-dot producto-stock-dot--order'
+          : 'producto-stock-dot producto-stock-dot--low';
+
+      contenido.innerHTML = `
+        <a href="icon-catalogo.html" class="producto-back">
+          <i class="ph ph-arrow-left"></i> Volver al catálogo
+        </a>
+
+        <div class="producto-layout">
+
+          <!-- Visual -->
+          <div class="producto-visual" style="background:${product.gradient}">
+            <div class="producto-img-main">
+              <div class="producto-placeholder" style="background:rgba(255,255,255,0.15); border-radius:var(--radius-xl);"></div>
+            </div>
+          </div>
+
+          <!-- Info -->
+          <div class="producto-info">
+            <span class="producto-tag">${product.tagLabel}</span>
+            <h1 class="producto-nombre">${product.name}</h1>
+            <div class="producto-precio">S/ ${product.price.toFixed(2)}</div>
+
+            <div class="producto-stock">
+              <span class="${stockDotClass}"></span>
+              ${product.stockLabel}
+            </div>
+
+            <p class="producto-desc">${product.fullDesc}</p>
+
+            <!-- Características -->
+            <div class="producto-features">
+              ${product.features.map(f => `
+                <div class="producto-feature">
+                  <i class="ph ph-${f.icon}"></i>
+                  <div class="producto-feature__text">
+                    <strong>${f.title}</strong>
+                    ${f.desc}
+                  </div>
+                </div>
+              `).join('')}
+            </div>
+
+            <!-- CTA -->
+            <div class="producto-cta">
+              <a href="https://wa.me/51962375279?text=Hola%2C%20quiero%20pedir%3A%20${encodeURIComponent(product.name)}%20%E2%80%94%20S%2F%20${product.price.toFixed(2)}"
+                class="btn btn--primary" target="_blank" rel="noopener noreferrer">
+                <i class="ph ph-whatsapp-logo"></i> Comprar por WhatsApp
+              </a>
+              <a href="mailto:contacto@krealab.com?subject=Pedido: ${encodeURIComponent(product.name)}"
+                class="btn btn--outline">
+                <i class="ph ph-envelope"></i> Consultar por correo
+              </a>
+              <p class="producto-cta-note">
+                <i class="ph ph-lightning"></i> Respuesta en menos de 30 minutos · Yape, BCP, contra entrega
+              </p>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Relacionados -->
+        ${relacionados.length > 0 ? `
+          <div class="producto-relacionados">
+            <h2 class="section-title" style="font-size:1.5rem; margin-bottom:var(--space-xl)">También te puede interesar</h2>
+            <div style="display:grid; grid-template-columns:repeat(4,1fr); gap:var(--space-md)">
+              ${relacionados.map(r => `
+                <a href="icon-producto.html?id=${r.id}" class="icon-product-card">
+                  <div class="icon-product-card__img" style="background:${r.gradient}">
+                    <span class="icon-product-card__tag">${r.tagLabel}</span>
+                  </div>
+                  <div class="icon-product-card__body">
+                    <h3 class="icon-product-card__name">${r.name}</h3>
+                    <div class="icon-product-card__footer">
+                      <span class="icon-product-card__price-label">${r.stockLabel}</span>
+                      <strong class="icon-product-card__price">S/ ${r.price.toFixed(2)}</strong>
+                    </div>
+                  </div>
+                </a>
+              `).join('')}
+            </div>
+          </div>
+        ` : ''}
+      `;
+    }
+  </script>
+</body>
+</html>

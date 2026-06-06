@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="KreaLab ICON — Catálogo completo de productos. Coleccionables, accesorios y decorativos impresos en 3D." />
+  <title>KreaLab ICON — Catálogo completo</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700;1,900&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <script src="https://unpkg.com/@phosphor-icons/web@2.1.1/src/index.js" defer></script>
+  <link rel="stylesheet" href="css/styles.css" />
+  <style>
+    :root { --accent: var(--icon); }
+    .btn--primary { background: var(--icon); box-shadow: 0 4px 16px rgba(156,39,176,0.30); }
+    .btn--primary:hover { background: #7b1fa2; }
+    .icon-product-card__price-label { color: var(--icon); }
+
+    /* Catálogo header */
+    .catalogo-header {
+      padding-top: calc(var(--nav-height) + var(--space-3xl));
+      padding-bottom: var(--space-2xl);
+      padding-inline: var(--space-xl);
+      max-width: var(--max-width);
+      margin-inline: auto;
+    }
+
+    .catalogo-header__back {
+      display: inline-flex;
+      align-items: center;
+      gap: var(--space-sm);
+      font-size: 0.82rem;
+      color: var(--text-muted);
+      margin-bottom: var(--space-xl);
+      transition: color var(--transition-fast);
+    }
+    .catalogo-header__back:hover { color: var(--text-primary); }
+
+    /* Filtros por colección */
+    .catalogo-filters {
+      display: flex;
+      align-items: center;
+      gap: var(--space-sm);
+      flex-wrap: wrap;
+      margin-bottom: var(--space-2xl);
+    }
+
+    /* Grid catálogo — 4 columnas desktop */
+    .catalogo-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: var(--space-lg);
+    }
+
+    /* Card clickeable */
+    .icon-product-card {
+      cursor: pointer;
+      text-decoration: none;
+      display: block;
+    }
+    .icon-product-card:hover .icon-product-card__name {
+      color: var(--icon);
+    }
+
+    .icon-product-card__tag {
+      display: inline-block;
+      font-size: 0.62rem;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      padding: 4px 10px;
+      border-radius: var(--radius-pill);
+      background: rgba(255,255,255,0.80);
+      color: var(--text-primary);
+      backdrop-filter: blur(4px);
+    }
+
+    /* Contador de resultados */
+    .catalogo-count {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      margin-bottom: var(--space-xl);
+    }
+
+    /* No results */
+    .catalogo-empty {
+      grid-column: 1 / -1;
+      text-align: center;
+      padding: var(--space-3xl);
+      color: var(--text-muted);
+    }
+
+    @media (max-width: 1024px) {
+      .catalogo-grid { grid-template-columns: repeat(3, 1fr); }
+      .catalogo-header { padding-inline: var(--space-lg); }
+    }
+    @media (max-width: 640px) {
+      .catalogo-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+  </style>
+</head>
+<body>
+
+  <header class="navbar" id="navbar">
+    <div class="navbar__inner">
+      <a href="index.html" class="navbar__logo" aria-label="KreaLab inicio">
+        <span class="navbar__logo-icon">
+          <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect x="1" y="1" width="26" height="26" rx="7" stroke="url(#lg-ic)" stroke-width="2.5"/>
+            <defs><linearGradient id="lg-ic" x1="0" y1="0" x2="28" y2="28" gradientUnits="userSpaceOnUse">
+              <stop offset="0%" stop-color="#E8502A"/><stop offset="35%" stop-color="#F5A623"/>
+              <stop offset="65%" stop-color="#4CAF50"/><stop offset="100%" stop-color="#2196F3"/>
+            </linearGradient></defs>
+          </svg>
+        </span>
+        <span class="navbar__logo-text">Krea Lab</span>
+      </a>
+      <nav class="navbar__nav">
+        <a href="index.html" class="navbar__link"><span class="navbar__dot" style="--dot-color:#1a1a1a"></span>INICIO</a>
+        <a href="print.html" class="navbar__link navbar__link--print"><span class="navbar__dot" style="--dot-color:#E8502A"></span>PRINT</a>
+        <a href="icon.html" class="navbar__link navbar__link--active navbar__link--icon"><span class="navbar__dot" style="--dot-color:#9C27B0"></span>ICON</a>
+        <a href="tech.html" class="navbar__link navbar__link--tech"><span class="navbar__dot" style="--dot-color:#2196F3"></span>TECH</a>
+        <a href="https://edu.krealab.com.pe/" class="navbar__link navbar__link--edu" target="_blank" rel="noopener noreferrer"><span class="navbar__dot" style="--dot-color:#4CAF50"></span>EDU</a>
+      </nav>
+      <div class="navbar__actions">
+        <a href="https://wa.me/51962375279?text=Hola%2C%20quiero%20ver%20el%20catálogo%20ICON" class="btn btn--primary" target="_blank" rel="noopener noreferrer">Cotizar Ahora</a>
+        <button class="navbar__hamburger" id="hamburger-btn" aria-label="Abrir menú" aria-expanded="false"><i class="ph ph-list"></i></button>
+      </div>
+    </div>
+    <div class="navbar__drawer" id="nav-drawer" aria-hidden="true">
+      <a href="index.html" class="navbar__drawer-link">INICIO</a>
+      <a href="print.html" class="navbar__drawer-link" style="color:var(--print)">PRINT · Impresión 3D</a>
+      <a href="icon.html" class="navbar__drawer-link" style="color:var(--icon)">ICON · Productos</a>
+      <a href="tech.html" class="navbar__drawer-link" style="color:var(--tech)">TECH · Soluciones</a>
+      <a href="https://edu.krealab.com.pe/" class="navbar__drawer-link" style="color:var(--edu)" target="_blank" rel="noopener noreferrer">EDU · Capacitaciones</a>
+      <a href="https://wa.me/51962375279" class="btn btn--primary btn--full" target="_blank" rel="noopener noreferrer">Ver catálogo por WhatsApp</a>
+    </div>
+  </header>
+
+  <main>
+    <div class="catalogo-header">
+      <a href="icon.html" class="catalogo-header__back">
+        <i class="ph ph-arrow-left"></i> Volver a ICON
+      </a>
+      <h1 class="section-title">Catálogo completo</h1>
+      <p class="section-desc" style="max-width:none; margin-bottom:var(--space-xl)">
+        Todos nuestros productos disponibles. Haz click en cualquier pieza para ver detalles y ordenar.
+      </p>
+
+      <!-- Filtros -->
+      <div class="catalogo-filters">
+        <button class="filter-btn filter-btn--active" data-filter="all">Todos <span id="count-all"></span></button>
+        <button class="filter-btn" data-filter="disney">Colección Disney</button>
+        <button class="filter-btn" data-filter="coleccionable">Coleccionables</button>
+        <button class="filter-btn" data-filter="decorativo">Decorativos</button>
+        <button class="filter-btn" data-filter="accesorio">Accesorios</button>
+        <button class="filter-btn" data-filter="bajo-pedido">Bajo Pedido</button>
+      </div>
+
+      <p class="catalogo-count" id="catalogo-count"></p>
+    </div>
+
+    <div class="container" style="padding-bottom:var(--space-4xl)">
+      <div class="catalogo-grid" id="catalogo-grid">
+        <!-- generado por JS desde PRODUCTS array -->
+      </div>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__grid">
+        <div class="footer__brand">
+          <a href="index.html" class="navbar__logo footer__logo">
+            <span class="navbar__logo-icon"><svg width="22" height="22" viewBox="0 0 28 28" fill="none"><rect x="1" y="1" width="26" height="26" rx="7" stroke="url(#lg-icf)" stroke-width="2.5"/><defs><linearGradient id="lg-icf" x1="0" y1="0" x2="28" y2="28" gradientUnits="userSpaceOnUse"><stop offset="0%" stop-color="#E8502A"/><stop offset="100%" stop-color="#9C27B0"/></linearGradient></defs></svg></span>
+            <span class="navbar__logo-text">Krea Lab</span>
+          </a>
+          <p class="footer__tagline">Tecnología 3D bajo demanda.<br />Lima, Perú.</p>
+          <div class="footer__social">
+            <a href="https://www.instagram.com/_krealab/" aria-label="Instagram" target="_blank" rel="noopener noreferrer"><i class="ph ph-instagram-logo"></i></a>
+            <a href="https://www.facebook.com/krealab" aria-label="Facebook" target="_blank" rel="noopener noreferrer"><i class="ph ph-facebook-logo"></i></a>
+            <a href="https://www.tiktok.com/@krealab" aria-label="TikTok" target="_blank" rel="noopener noreferrer"><i class="ph ph-tiktok-logo"></i></a>
+          </div>
+        </div>
+        <div class="footer__col">
+          <h4 class="footer__col-title">LÍNEAS</h4>
+          <ul class="footer__links">
+            <li><a href="print.html">Print · Impresión 3D</a></li>
+            <li><a href="tech.html">Tech · Soluciones</a></li>
+            <li><a href="https://edu.krealab.com.pe/" target="_blank" rel="noopener noreferrer">Edu · Capacitaciones</a></li>
+            <li><a href="icon.html">Icon · Productos</a></li>
+          </ul>
+        </div>
+        <div class="footer__col">
+          <h4 class="footer__col-title">EMPRESA</h4>
+          <ul class="footer__links">
+            <li><a href="index.html#lineas">Sobre nosotros</a></li>
+            <li><a href="index.html#faq">Preguntas frecuentes</a></li>
+            <li><a href="index.html#contacto">Contacto</a></li>
+            <li><a href="#">Libro de Reclamaciones</a></li>
+          </ul>
+        </div>
+        <div class="footer__col">
+          <h4 class="footer__col-title">CONTACTO</h4>
+          <ul class="footer__contact">
+            <li><a href="tel:+51962375279">+51 962 375 279</a></li>
+            <li><a href="mailto:contacto@krealab.com">contacto@krealab.com</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <span>© 2026 Krea Lab · Todos los derechos reservados</span>
+        <span>Diseño web por <a href="#" style="color:var(--text-muted); text-decoration:underline;">Pixelhost</a></span>
+      </div>
+    </div>
+  </footer>
+
+  <a href="https://wa.me/51962375279" class="wa-float" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp">
+    <i class="ph ph-whatsapp-logo"></i>
+  </a>
+
+  <script src="js/products.js"></script>
+  <script src="js/main.js"></script>
+  <script>
+    // Renderizar grid desde PRODUCTS
+    const grid = document.getElementById('catalogo-grid');
+    const countEl = document.getElementById('catalogo-count');
+    const filterBtns = document.querySelectorAll('.filter-btn');
+    let activeFilter = 'all';
+
+    function renderGrid(filter) {
+      const filtered = filter === 'all'
+        ? PRODUCTS
+        : PRODUCTS.filter(p => p.tags.includes(filter));
+
+      countEl.textContent = `${filtered.length} producto${filtered.length !== 1 ? 's' : ''}`;
+
+      if (filtered.length === 0) {
+        grid.innerHTML = '<div class="catalogo-empty"><i class="ph ph-magnifying-glass" style="font-size:2rem;display:block;margin-bottom:8px"></i>No hay productos en esta categoría.</div>';
+        return;
+      }
+
+      grid.innerHTML = filtered.map(p => `
+        <a href="icon-producto.html?id=${p.id}" class="icon-product-card" data-animate="fade-up">
+          <div class="icon-product-card__img" style="background:${p.gradient}">
+            <span class="icon-product-card__tag">${p.tagLabel}</span>
+          </div>
+          <div class="icon-product-card__body">
+            <h3 class="icon-product-card__name">${p.name}</h3>
+            <p class="icon-product-card__desc">${p.shortDesc}</p>
+            <div class="icon-product-card__footer">
+              <span class="icon-product-card__price-label">${p.stockLabel}</span>
+              <strong class="icon-product-card__price">S/ ${p.price.toFixed(2)}</strong>
+            </div>
+          </div>
+        </a>
+      `).join('');
+
+      // re-trigger scroll animations
+      document.querySelectorAll('[data-animate]').forEach(el => {
+        el.classList.remove('is-visible');
+        requestAnimationFrame(() => el.classList.add('is-visible'));
+      });
+    }
+
+    filterBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        activeFilter = btn.getAttribute('data-filter');
+        filterBtns.forEach(b => b.classList.remove('filter-btn--active'));
+        btn.classList.add('filter-btn--active');
+        renderGrid(activeFilter);
+      });
+    });
+
+    // Init
+    document.getElementById('count-all').textContent = PRODUCTS.length;
+    renderGrid('all');
+  </script>
+</body>
+</html>
